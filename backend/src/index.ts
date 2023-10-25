@@ -4,6 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import { productRouter } from './routers/productRouter';
 import { seedRouter } from './routers/seedRouter';
+import { userRounter } from './routers/userRouter';
 
 dotenv.config();
 
@@ -27,7 +28,11 @@ app.use(
   }),
 );
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/api/products', productRouter);
+app.use('/api/users', userRounter);
 app.use('/api/seed', seedRouter);
 
 const PORT = 4000;
