@@ -14,6 +14,7 @@ import CartPage from './pages/CartPage.tsx';
 import SigninPage from './pages/SigninPage.tsx';
 import SignupPage from './pages/SignupPage.tsx';
 import ShippingAddressPage from './pages/ShippingAddressPage.tsx';
+import PaymentMethodPage from './pages/PaymentMethodPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
       { path: 'signin', element: <SigninPage /> },
       { path: 'signup', element: <SignupPage /> },
       { path: 'shipping', element: <ShippingAddressPage /> },
+      { path: 'payment', element: <PaymentMethodPage /> },
     ],
   },
 ]);
