@@ -36,7 +36,7 @@ export default function PlaceOrderPage() {
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       });
-      dispatch({ type: 'CART_CLEAR ' });
+      dispatch({ type: 'CART_CLEAR' });
       localStorage.removeItem('cartItems');
       navigate(`/order/${data.order._id}`);
     } catch (error) {
