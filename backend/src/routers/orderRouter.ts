@@ -5,6 +5,15 @@ import { OrderModel } from '../models/orderModel';
 import { Product } from '../models/productModel';
 export const orderRouter = express.Router();
 
+orderRouter.get(
+  '/mine',
+  isAuth,
+  asyncHandler(async (req: Request, res: Response) => {
+    const orders = await OrderModel.find({ user: req.user._id });
+    res.json(orders);
+  }),
+);
+
 // /api/orders/:id
 orderRouter.get(
   '/:id',
